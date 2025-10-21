@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Tailwind v4: define theme via @theme */
+@theme {
+  --color-brand: #0E3A8A;
+  --color-accent: #2563EB;
+  --color-gold: #C9A227;
+  --color-ink: #1F2937;
+}
+
+:root {
+  color-scheme: light;
+}
+
+/* Container helper */
+.container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 72rem;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -40px;
+  background: white;
+  color: var(--color-ink);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Focus ring stronger for a11y */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
